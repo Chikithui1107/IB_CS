@@ -13,10 +13,19 @@ def calculator():
         if num2 != 0:
             result = num1 / num2
         else:
-            return "Error: Division by zero"
+            print("Error: Division by zero")
+            return calculator()
     else:
-        return "Invalid operation"
+        print("Invalid operation")
+        return calculator()
 
     print(f"The result of {num1} {operation} {num2} is: {result}")
+
+    again = input("Do you want to perform another calculation? (y/n): ")
+    if again.lower() == 'y':
+        return calculator()
+    else:
+        print("Thank you for using the calculator!")
+        return
 
 calculator()
